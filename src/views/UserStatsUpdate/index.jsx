@@ -7,6 +7,7 @@ import { Container, ListItemAnimated } from "./styles";
 import useAnimatedList from "../../hooks/useAnimatedList";
 import useHttpReqData from "../../hooks/useHttpReqData";
 import { Button, TextField } from "@mui/material";
+import useHttpReq from "../../hooks/useHttpReq";
 
 const DATA = [
   [
@@ -124,26 +125,30 @@ const UserStatsUpdate = () => {
 
   const history = useHistory();
 
-  const { data, isLoading, request } = useHttpReqData({
+  const [data, setData] = useState([]);
+  const { isLoading, request } = useHttpReq({
     baseUrl: "http://localhost:3000",
     path: "/health/quick-update",
   });
 
   const [result] = useAnimatedList({
     data,
-    idKeyName: "sensorId",
+    idKeyName: "sensor",
   });
 
   useEffect(() => {
-    console.log(updateInterval);
-    const interval = setInterval(() => {
-      request();
+
+    const interval = setInterval(async () => {
+      const { data: res } = await request();
+      setData(res);
     }, updateInterval * 1000);
 
     return () => clearInterval(interval);
   }, [updateInterval]);
 
-  if (isLoading) return null;
+  // if (isLoading) return null;
+
+  console.log(result)
 
   return (
     <>
@@ -155,9 +160,9 @@ const UserStatsUpdate = () => {
       />
       <Button
         onClick={() => {
-          console.log(updateIntervalInput.current)
-          setUpdateInterval(Number(updateIntervalInput.current))}
-        }
+          console.log(updateIntervalInput.current);
+          setUpdateInterval(Number(updateIntervalInput.current));
+        }}
       >
         Update Interval
       </Button>
@@ -173,7 +178,7 @@ const UserStatsUpdate = () => {
               age={dayjs().diff(info.patient_data.birthdate, "year")}
               gender={info.patient_data.gender}
               spo2={info._value_spo2}
-              bpm={data._value_bpm}
+              bpm={info._value_bpm}
               onDetailClick={() => {
                 history.push(`/updates/detail/${info.patient_data.patient_id}`);
               }}

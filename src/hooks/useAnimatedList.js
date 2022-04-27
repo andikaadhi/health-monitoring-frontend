@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 
-const useAnimatedList = ({ data = [], idKeyName }) => {
+const dataDefaultValue = [];
+
+const useAnimatedList = ({ data = dataDefaultValue, idKeyName }) => {
   const [result, setResult] = useState(
     data.map((item, index) => ({ ...item, index }))
   );
@@ -19,11 +21,12 @@ const useAnimatedList = ({ data = [], idKeyName }) => {
       if (!updatedDataMap[item[idKeyName]]) return null;
 
       const newIndex = updatedDataMap[item[idKeyName]].index;
-      delete updatedDataMap[item[idKeyName]];
-      return newOrder.push({
-        ...item,
+      newOrder.push({
+        ...updatedDataMap[item[idKeyName]],
         index: newIndex,
       });
+      delete updatedDataMap[item[idKeyName]];
+      return;
     });
 
     return [
