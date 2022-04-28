@@ -1,6 +1,8 @@
-import styled from "styled-components";
-import { spacing, shadow, border, typography } from "../styles";
-import { fadeIn } from "../styles/animation";
+import styled from 'styled-components';
+import {
+  spacing, shadow, border, typography,
+} from '../styles';
+import { fadeIn } from '../styles/animation';
 
 export const Div = styled.div`
   box-sizing: border-box;

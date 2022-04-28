@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
 const dataDefaultValue = [];
 
 const useAnimatedList = ({ data = dataDefaultValue, idKeyName }) => {
   const [result, setResult] = useState(
-    data.map((item, index) => ({ ...item, index }))
+    data.map((item, index) => ({ ...item, index })),
   );
   const isInitialRender = useRef(true);
 
@@ -26,7 +26,6 @@ const useAnimatedList = ({ data = dataDefaultValue, idKeyName }) => {
         index: newIndex,
       });
       delete updatedDataMap[item[idKeyName]];
-      return;
     });
 
     return [

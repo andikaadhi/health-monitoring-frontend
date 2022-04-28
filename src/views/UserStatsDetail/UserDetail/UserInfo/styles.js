@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Div, Text } from "../../../../style-system/components";
+import styled from 'styled-components';
+import { Div, Text } from '../../../../style-system/components';
 
 export const Container = styled(Div)`
   display: flex;

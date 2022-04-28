@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
-import { Switch, Route } from "react-router-dom";
-import Drawer from "../container/Drawer";
-import LiveUpdatePanel from "../container/LiveUpdatePanel";
-import { AuthContext } from "../contexts/AuthContext";
-import Login from "../views/Login";
-import AppNavigation from "../container/AppNavigation";
-import PatientList from "../views/PatientList";
-import AddPatient from "../views/AddPatient";
-import UserStatsDetail from "../views/UserStatsDetail";
+import React, { useContext } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Drawer from '../container/Drawer';
+import LiveUpdatePanel from '../container/LiveUpdatePanel';
+import { AuthContext } from '../contexts/AuthContext';
+import Login from '../views/Login';
+import AppNavigation from '../container/AppNavigation';
+import PatientList from '../views/PatientList';
+import AddPatient from '../views/AddPatient';
+import UserStatsDetail from '../views/UserStatsDetail';
 
-const Routes = () => {
+function Routes() {
   const { isLogin } = useContext(AuthContext);
 
   return (
@@ -39,6 +39,6 @@ const Routes = () => {
       </Switch>
     </>
   );
-};
+}
 
 export default Routes;

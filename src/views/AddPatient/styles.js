@@ -14,7 +14,9 @@ export const LoginContainer = styled(Div).attrs({
 export const Title = styled(Text).attrs({
   fontSize: 4,
   bold: true,
-})``;
+})`
+  padding-top: 20px;
+`;
 
 export const Form = styled.form`
   display: flex;

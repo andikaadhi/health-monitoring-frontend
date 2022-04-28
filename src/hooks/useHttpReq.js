@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef, useContext } from "react";
-import axios from "axios";
-import { AuthContext } from "../contexts/AuthContext";
+import {
+  useState, useEffect, useRef, useContext,
+} from 'react';
+import axios from 'axios';
+import { AuthContext } from '../contexts/AuthContext';
 
 const { CancelToken } = axios;
 
 const useHttpReq = ({
-  method: defaultMethod = "get",
+  method: defaultMethod = 'get',
   path: defaultPath,
   baseUrl: defaultBaseUrl,
   reqConfig = {},
@@ -29,10 +31,9 @@ const useHttpReq = ({
   };
 
   const request = async (...params) => {
-    const callback =
-      typeof params[params.length - 1] === "function"
-        ? params[params.length - 1]
-        : defaultCallback;
+    const callback = typeof params[params.length - 1] === 'function'
+      ? params[params.length - 1]
+      : defaultCallback;
 
     const {
       method = defaultMethod,
@@ -41,7 +42,7 @@ const useHttpReq = ({
       path = defaultPath,
       config = reqConfig,
       query = defaultQuery,
-    } = typeof params[0] === "object" ? params[0] : {};
+    } = typeof params[0] === 'object' ? params[0] : {};
 
     try {
       if (useLoading) setIsLoading(true);
@@ -76,7 +77,7 @@ const useHttpReq = ({
     () => () => {
       if (cancelRef.current) cancelRef.current();
     },
-    []
+    [],
   );
 
   return { request, isLoading };

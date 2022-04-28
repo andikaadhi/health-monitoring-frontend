@@ -1,10 +1,10 @@
-import React from "react";
-import UserDetail from "./UserDetail";
-import DetailChart from "./DetailChart";
-import { Container, Section } from "./styles";
-import BackButton from "../../components/BackButton";
+import React from 'react';
+import UserDetail from './UserDetail';
+import DetailChart from './DetailChart';
+import { Container, Section } from './styles';
+import BackButton from '../../components/BackButton';
 
-const UserStatsDetail = () => {
+function UserStatsDetail() {
   return (
     <Container>
       <BackButton to="/" />
@@ -16,6 +16,6 @@ const UserStatsDetail = () => {
       </Section>
     </Container>
   );
-};
+}
 
 export default UserStatsDetail;

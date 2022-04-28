@@ -13,6 +13,7 @@ export const LoginContainer = styled(Div).attrs({
 
 export const Title = styled(Text).attrs({
   fontSize: 4,
+  space: { pt: 4 },
   bold: true,
 })``;
 

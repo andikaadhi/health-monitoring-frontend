@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import ChartJs from "chart.js/auto";
+import React, { useEffect, useRef } from 'react';
+import ChartJs from 'chart.js/auto';
 
 const createData = (dataLabel, dataPoints, lineColor) => ({
   labels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -9,14 +9,14 @@ const createData = (dataLabel, dataPoints, lineColor) => ({
       data: dataPoints,
       borderColor: lineColor,
       fill: false,
-      cubicInterpolationMode: "monotone",
+      cubicInterpolationMode: 'monotone',
       tension: 0.4,
     },
   ],
 });
 
 const createConfig = (title, { dataLabel, dataPoints, lineColor }) => ({
-  type: "line",
+  type: 'line',
   data: createData(dataLabel, dataPoints, lineColor),
   options: {
     plugins: {
@@ -47,7 +47,9 @@ const createConfig = (title, { dataLabel, dataPoints, lineColor }) => ({
   },
 });
 
-const Chart = ({ title, dataPoints, dataLabel, lineColor, className }) => {
+function Chart({
+  title, dataPoints, dataLabel, lineColor, className,
+}) {
   const canvasRef = useRef();
 
   const dataRef = useRef({ dataPoints, dataLabel, lineColor });
@@ -60,6 +62,6 @@ const Chart = ({ title, dataPoints, dataLabel, lineColor, className }) => {
       <canvas ref={canvasRef} />
     </div>
   );
-};
+}
 
 export default Chart;

@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Text } from "../../style-system/components";
-import { RingContainer, RingSvg } from "./styles";
-import colors from "../../colors";
+import React, { useEffect, useState } from 'react';
+import { Text } from '../../style-system/components';
+import { RingContainer, RingSvg } from './styles';
+import colors from '../../colors';
 
 const CONFIG = {
   radius: 80,
   stroke: 10,
 };
 
-const SpO2Ring = ({ value = 100 }) => {
+function SpO2Ring({ value = 100 }) {
   const [circle, setCircle] = useState();
 
   useEffect(() => {
-    const radius = CONFIG.radius;
+    const { radius } = CONFIG;
     const normalizedRadius = CONFIG.radius - CONFIG.stroke * 2;
 
     setCircle({
@@ -46,11 +46,12 @@ const SpO2Ring = ({ value = 100 }) => {
       <div>
         <Text fontSize={1}>SpO2</Text>
         <Text fontSize={4} bold>
-          {value}%
+          {value}
+          %
         </Text>
       </div>
     </RingContainer>
   );
-};
+}
 
 export default SpO2Ring;

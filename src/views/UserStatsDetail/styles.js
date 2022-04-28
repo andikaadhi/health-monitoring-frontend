@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Div, View } from "../../style-system/components";
+import styled from 'styled-components';
+import { Div, View } from '../../style-system/components';
 
 export const Container = styled(View).attrs({
   space: { py: 4 },

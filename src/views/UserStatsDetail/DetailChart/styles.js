@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Div } from "../../../style-system/components";
+import styled from 'styled-components';
+import { Div } from '../../../style-system/components';
 
 export const DetailChartContainer = styled(Div)`
   display: grid;

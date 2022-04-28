@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export const AuthContext = React.createContext();
 
-const AuthProvider = ({ children }) => {
+function AuthProvider({ children }) {
   const [authToken, setAuthToken] = useState();
 
   const saveAuthToken = async (token) => {
@@ -10,20 +10,28 @@ const AuthProvider = ({ children }) => {
     setAuthToken(token);
   };
 
+  const clearAuthToken = async () => {
+    await localStorage.removeItem("auth-token");
+    setAuthToken(null);
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("auth-token");
     saveAuthToken(token);
   }, []);
 
-  console.log(authToken)
-
   return (
     <AuthContext.Provider
-      value={{ isLogin: Boolean(authToken), authToken, saveAuthToken }}
+      value={{
+        isLogin: Boolean(authToken),
+        authToken,
+        saveAuthToken,
+        clearAuthToken,
+      }}
     >
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
 export default AuthProvider;

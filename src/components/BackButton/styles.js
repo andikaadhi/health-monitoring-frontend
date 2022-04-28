@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Link from "../Link";
+import styled from 'styled-components';
+import Link from '../Link';
 
 const ButtonContainer = styled(Link)`
   width: 100%;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Div, Text } from "../../style-system/components";
+import styled from 'styled-components';
+import { Div, Text } from '../../style-system/components';
 
 export const CardContainer = styled(Div).attrs({
   borderRad: 3,

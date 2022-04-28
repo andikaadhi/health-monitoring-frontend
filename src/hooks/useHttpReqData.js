@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import useHttpReq from "./useHttpReq";
+import { useEffect, useRef, useState } from 'react';
+import useHttpReq from './useHttpReq';
 
 const useHttpReqData = (
   { defaultLoadingState = true, ...params },
-  dependencies = []
+  dependencies = [],
 ) => {
   const [response, setResponse] = useState({
     data: undefined,

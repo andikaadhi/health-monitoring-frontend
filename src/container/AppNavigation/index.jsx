@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import AppBar from "../AppBar";
-import Drawer from "../Drawer";
+import React, { useState } from 'react';
+import AppBar from '../AppBar';
+import Drawer from '../Drawer';
 
-const AppNavigation = () => {
+function AppNavigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
@@ -15,6 +15,6 @@ const AppNavigation = () => {
       <Drawer isOpen={isOpen} onClose={handleClose} />
     </>
   );
-};
+}
 
 export default AppNavigation;

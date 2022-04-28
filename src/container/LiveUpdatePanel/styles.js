@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Div } from "../../style-system/components";
+import styled from 'styled-components';
+import { Div } from '../../style-system/components';
 
 const LiveUpdateContainer = styled(Div).attrs({
   space: { p: 4 },
