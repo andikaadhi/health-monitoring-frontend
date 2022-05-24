@@ -1,9 +1,9 @@
-import React from 'react';
-import { CardContainer, SensorIdText, TagsContainer } from './styles';
-import UserInfo from './UserInfo';
-import ViewDetailButton from './ViewDetailButton';
-import Tag from '../Tag';
-import colors from '../../colors';
+import React from "react";
+import { CardContainer, SensorIdText, TagsContainer } from "./styles";
+import UserInfo from "./UserInfo";
+import ViewDetailButton from "./ViewDetailButton";
+import Tag from "../Tag";
+import colors from "../../colors";
 
 function UserOxiCard({
   sensorId,
@@ -17,10 +17,7 @@ function UserOxiCard({
   return (
     <CardContainer>
       <div>
-        <SensorIdText fontSize={1}>
-          SensorID
-          {sensorId}
-        </SensorIdText>
+        <SensorIdText fontSize={1}>{`SensorID ${sensorId}`}</SensorIdText>
         <UserInfo name={name} gender={gender} age={age} />
       </div>
       <div>

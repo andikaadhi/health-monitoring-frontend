@@ -5,7 +5,7 @@ import colors from "../../../colors";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import useHttpReqData from "../../../hooks/useHttpReqData";
 
-const DATA = [98, 99, 95, 95, 96, 98, 99, 98, 98, 98, 97, 97, 97];
+// const DATA = [98, 99, 95, 95, 96, 98, 99, 98, 98, 98, 97, 97, 97];
 
 const DetailChart = () => {
   const { patientId } = useParams();

@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { View, Div } from '../../style-system/components';
 
 export const Container = styled(View).attrs({
-  space: { py: 4 },
+  space: { py: 8 },
 })`
   width: 100%;
   position: relative;

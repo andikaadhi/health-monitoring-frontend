@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import dayjs from 'dayjs';
 import React from 'react';
 import { Div } from '../../../../style-system/components';
 import ProfileImg from './ProfileImg';
@@ -22,11 +23,11 @@ function UserInfo({
         </Typography>
         <Typography fontSize={12}>
           SpO2:
-          {spo2LastUpdated}
+          {dayjs(spo2LastUpdated).format('DD-MM-YYYY HH:mm:ss')}
         </Typography>
         <Typography fontSize={12}>
           BPM:
-          {bpmLastUpdated}
+          {dayjs(spo2LastUpdated).format('DD-MM-YYYY HH:mm:ss')}
         </Typography>
       </Div>
     </Container>

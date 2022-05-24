@@ -24,8 +24,12 @@ const UserDetail = () => {
         spo2LastUpdated={data?.health_update?._time_spo2}
         bpmLastUpdated={data?.health_update?._time_bpm}
       />
-      <HeartRateAnimated value={data?.health_update?._value_bpm} />
-      <SpO2Ring value={data?.health_update?._value_spo2} />
+      {data?.health_update && (
+        <>
+          <HeartRateAnimated value={data?.health_update?._value_bpm} />
+          <SpO2Ring value={data?.health_update?._value_spo2} />
+        </>
+      )}
     </DetailContainer>
   );
 };
