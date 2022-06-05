@@ -12,7 +12,7 @@ function LiveUpdatePanel() {
         Live Update Panel
       </Text>
       <Switch>
-        <Route path="/updates" name="User Stats Update" exact>
+        <Route path="/" name="User Stats Update" exact>
           <UserStatsUpdate />
         </Route>
         <Route path="/updates/detail/:patientId" name="User Stats Detail" exact>

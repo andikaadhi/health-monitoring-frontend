@@ -18,7 +18,7 @@ function Routes() {
       <Switch>
         {isLogin ? (
           <>
-            <Route path="/updates">
+            <Route path="/">
               <LiveUpdatePanel />
             </Route>
             <Route path="/patients" exact>

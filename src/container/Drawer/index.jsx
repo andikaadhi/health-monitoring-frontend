@@ -9,7 +9,7 @@ function Drawer({ isOpen, onClose }) {
   return (
     <MuiDrawer anchor="left" open={isOpen} onClose={onClose}>
       <Box sx={{ width: '200px' }}>
-        <Link to="/updates">
+        <Link to="/">
           <List>
             <ListItem>
               <ListItemText primary="Quick Updates" />
