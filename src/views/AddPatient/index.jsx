@@ -18,7 +18,7 @@ function AddPatient() {
   const history = useHistory();
 
   const { request, isLoading } = useHttpReq({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.100.69:3000",
     path: "/patients",
     method: "POST",
   });

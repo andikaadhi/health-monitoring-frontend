@@ -9,7 +9,7 @@ function Login() {
   const { saveAuthToken } = useContext(AuthContext);
 
   const { request } = useHttpReq({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.100.69:3000",
     path: "/admins/login",
     method: "POST",
   });

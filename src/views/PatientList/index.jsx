@@ -15,7 +15,7 @@ const PatientList = () => {
   const history = useHistory();
 
   const { data, isLoading } = useHttpReqData({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.100.69:3000",
     path: "/patients",
   });
 

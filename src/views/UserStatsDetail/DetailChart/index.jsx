@@ -4,6 +4,7 @@ import Chart from "../../../components/Chart";
 import colors from "../../../colors";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import useHttpReqData from "../../../hooks/useHttpReqData";
+import dayjs from "dayjs";
 
 // const DATA = [98, 99, 95, 95, 96, 98, 99, 98, 98, 98, 97, 97, 97];
 
@@ -11,7 +12,7 @@ const DetailChart = () => {
   const { patientId } = useParams();
 
   const { data } = useHttpReqData({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.100.69:3000",
     path: `/health/patients/${patientId}/history`,
   });
 
@@ -23,6 +24,7 @@ const DetailChart = () => {
         <Chart
           title="Oxygen Saturation (SpO2)"
           dataLabel="SpO2"
+          labels={data?.spo2?.map((item) => dayjs(item._time).format('HH:mm'))}
           dataPoints={data?.spo2?.map((item) => item._value)}
           lineColor={colors.green[1]}
         />
@@ -31,6 +33,7 @@ const DetailChart = () => {
         <Chart
           title="Heart Rate"
           dataLabel="BPM"
+          labels={data?.bpm?.map((item) => dayjs(item._time).format('HH:mm'))}
           dataPoints={data?.bpm?.map((item) => item._value)}
           lineColor={colors.red[1]}
         />

@@ -6,6 +6,7 @@ import Tag from "../Tag";
 import colors from "../../colors";
 
 function UserOxiCard({
+  isCritical,
   sensorId,
   name,
   gender,
@@ -15,7 +16,7 @@ function UserOxiCard({
   onDetailClick,
 }) {
   return (
-    <CardContainer>
+    <CardContainer isCritical={isCritical}>
       <div>
         <SensorIdText fontSize={1}>{`SensorID ${sensorId}`}</SensorIdText>
         <UserInfo name={name} gender={gender} age={age} />

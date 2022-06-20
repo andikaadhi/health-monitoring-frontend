@@ -16,7 +16,7 @@ function UserStatsUpdate() {
 
   const [data, setData] = useState([]);
   const { request } = useHttpReq({
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://192.168.100.69:3000",
     path: "/health/quick-update",
   });
 
@@ -65,6 +65,7 @@ function UserStatsUpdate() {
               gender={info.patient_data?.gender}
               spo2={info._value_spo2}
               bpm={info._value_bpm}
+              isCritical={info.is_critical}
               onDetailClick={() => {
                 history.push(`/updates/detail/${info.patient_data.patient_id}`);
               }}

@@ -8,9 +8,9 @@ import UserStatsDetail from '../../views/UserStatsDetail';
 function LiveUpdatePanel() {
   return (
     <LiveUpdateContainer>
-      <Text fontSize={4} level="lg" bold>
+      {/* <Text fontSize={4} level="lg" bold>
         Live Update Panel
-      </Text>
+      </Text> */}
       <Switch>
         <Route path="/" name="User Stats Update" exact>
           <UserStatsUpdate />
